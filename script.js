@@ -12,6 +12,9 @@ const fpStatus = document.getElementById("fpStatus");
 const accessGranted = document.getElementById("accessGranted");
 const terminalText = document.getElementById("terminalText");
 
+// Sound
+const scanSound = document.getElementById("scanSound");
+
 // Terminal lines
 const terminalLines = [
   "Initializing secure system...",
@@ -28,26 +31,27 @@ accessBtn.addEventListener("click", () => {
   access.classList.remove("hidden");
 });
 
-// Fake fingerprint scan (NO POPUP)
+// Fingerprint scan
 fpBox.addEventListener("click", () => {
+  scanSound.currentTime = 0;
+  scanSound.play();
+
   fpBox.classList.add("scanning");
   fpStatus.innerText = "Scanning fingerprint...";
 
   setTimeout(() => {
-    // Success
     fpBox.style.display = "none";
     fpStatus.style.display = "none";
     accessGranted.classList.remove("hidden");
 
     startTerminal();
 
-    // STEP 2 → STEP 3
     setTimeout(() => {
       access.classList.add("hidden");
       portfolio.classList.remove("hidden");
     }, 4500);
 
-  }, 2500); // scan duration
+  }, 2500);
 });
 
 // Terminal typing
