@@ -6,18 +6,19 @@ const portfolio = document.getElementById("portfolio");
 // Button
 const accessBtn = document.getElementById("accessBtn");
 
-// Fingerprint elements
+// Fingerprint
 const fpBox = document.getElementById("fingerprintBox");
 const fpStatus = document.getElementById("fpStatus");
 const accessGranted = document.getElementById("accessGranted");
 const terminalText = document.getElementById("terminalText");
 
-// Terminal content
+// Terminal lines
 const terminalLines = [
   "Initializing secure system...",
-  "Checking biometric credentials...",
-  "Decrypting user profile...",
-  "Access level verified...",
+  "Simulating biometric scan...",
+  "Decrypting credentials...",
+  "Verifying access level...",
+  "Access level: ADMIN",
   "Welcome Yogesh."
 ];
 
@@ -27,27 +28,13 @@ accessBtn.addEventListener("click", () => {
   access.classList.remove("hidden");
 });
 
-// Fingerprint click
-fpBox.addEventListener("click", async () => {
+// Fake fingerprint scan (NO POPUP)
+fpBox.addEventListener("click", () => {
   fpBox.classList.add("scanning");
   fpStatus.innerText = "Scanning fingerprint...";
 
-  if (!window.PublicKeyCredential) {
-    fpStatus.innerText = "Biometric not supported";
-    fpBox.classList.remove("scanning");
-    return;
-  }
-
-  try {
-    await navigator.credentials.get({
-      publicKey: {
-        challenge: new Uint8Array(32),
-        timeout: 60000,
-        userVerification: "required"
-      }
-    });
-
-    // SUCCESS
+  setTimeout(() => {
+    // Success
     fpBox.style.display = "none";
     fpStatus.style.display = "none";
     accessGranted.classList.remove("hidden");
@@ -58,15 +45,12 @@ fpBox.addEventListener("click", async () => {
     setTimeout(() => {
       access.classList.add("hidden");
       portfolio.classList.remove("hidden");
-    }, 5000);
+    }, 4500);
 
-  } catch {
-    fpStatus.innerText = "Authentication failed ❌";
-    fpBox.classList.remove("scanning");
-  }
+  }, 2500); // scan duration
 });
 
-// Terminal typing effect
+// Terminal typing
 function startTerminal() {
   let line = 0;
   let char = 0;
