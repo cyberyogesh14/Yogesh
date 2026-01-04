@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Yogesh | Cyber Security Associate</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
@@ -13,37 +13,31 @@
   <img src="./PIC.jpeg" class="profile" alt="Yogesh">
   <h1>YOGESH</h1>
   <h2>>> Cyber Security Associate</h2>
-  <p>> B.Com Student | Cyber Security Associate | Web Developer</p>
+  <p>> B.Com Student | Cyber Security | Web Developer</p>
   <button id="accessBtn">ACCESS TERMINAL</button>
-
 </section>
 
-
-<section id="access" class="center">
-
-  <!-- Fingerprint UI -->
+<!-- STEP 2 : FINGERPRINT -->
+<section id="access" class="center hidden">
   <div id="fingerprintBox" class="fingerprint-box">
     <div class="fingerprint"></div>
   </div>
   <p id="fpStatus">Touch fingerprint to authenticate</p>
 
-  <!-- Access Granted (hidden first) -->
   <div id="accessGranted" class="hidden">
     <h1 class="granted">ACCESS GRANTED</h1>
     <pre id="terminalText" class="terminal-text"></pre>
   </div>
-
 </section>
 
-
-
-<!-- STEP 3 : FULL PORTFOLIO -->
+<!-- STEP 3 : PORTFOLIO -->
 <section id="portfolio" class="hidden">
 
   <div class="terminal">
     <h2>> About Me</h2>
     <p>
-      From commerce to code — a B.Com student sharpening skills in Cyber Security, Linux security, and modern web development.
+      From commerce to code — a B.Com student sharpening skills in Cyber Security,
+      Linux security, and modern web development.
     </p>
   </div>
 
@@ -52,7 +46,7 @@
     <p>B.Com – Pursuing</p>
     <p>12th (Commerce) – 79%</p>
     <p>10th – 60%</p>
-    <p>Diploma in cyber security – Pursuing</p>
+    <p>Diploma in Cyber Security – Pursuing</p>
     <p>Diploma in Digital Marketing – Pursuing</p>
   </div>
 
@@ -62,7 +56,6 @@
       <span>HTML</span>
       <span>CSS</span>
       <span>JavaScript</span>
-      <span>React.js</span>
       <span>Linux</span>
       <span>Kali Linux</span>
       <span>Cyber Security</span>
@@ -70,6 +63,9 @@
   </div>
 
 </section>
+
+<!-- SCAN SOUND -->
+<audio id="scanSound" src="./scan.mp3" preload="auto"></audio>
 
 <script src="script.js"></script>
 </body>
