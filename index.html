@@ -14,15 +14,27 @@
   <h1>YOGESH</h1>
   <h2>>> Cyber Security Associate</h2>
   <p>> B.Com Student | Cyber Security Associate | Web Developer</p>
-  <button onclick="grantAccess()">ACCESS TERMINAL</button>
+  <button id="accessBtn">ACCESS TERMINAL</button>
+
 </section>
 
 
-<!-- STEP 2 : ACCESS GRANTED + TERMINAL -->
-<section id="access" class="center hidden">
-  <h1 class="granted">ACCESS GRANTED</h1>
-  <pre id="terminalText" class="terminal-text"></pre>
+<section id="access" class="center">
+
+  <!-- Fingerprint UI -->
+  <div id="fingerprintBox" class="fingerprint-box">
+    <div class="fingerprint"></div>
+  </div>
+  <p id="fpStatus">Touch fingerprint to authenticate</p>
+
+  <!-- Access Granted (hidden first) -->
+  <div id="accessGranted" class="hidden">
+    <h1 class="granted">ACCESS GRANTED</h1>
+    <pre id="terminalText" class="terminal-text"></pre>
+  </div>
+
 </section>
+
 
 
 <!-- STEP 3 : FULL PORTFOLIO -->
@@ -37,11 +49,11 @@
 
   <div class="terminal">
     <h2>> Education</h2>
-    <p>10th – 60%</p>
-    <p>12th (Commerce) – 79%</p>
     <p>B.Com – Pursuing</p>
+    <p>12th (Commerce) – 79%</p>
+    <p>10th – 60%</p>
     <p>Diploma in cyber security – Pursuing</p>
-    <p> Diploma in Digital Marketing - Pursuing </p>
+    <p>Diploma in Digital Marketing – Pursuing</p>
   </div>
 
   <div class="terminal">
@@ -62,5 +74,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-
-
